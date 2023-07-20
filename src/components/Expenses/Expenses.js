@@ -34,7 +34,7 @@ const Expenses = (props) => {
               key={expense.id}
             />
           ))} */}
-        {filteredExpenses.length === 0 ? (
+        {/* {filteredExpenses.length === 0 ? (
           <p>No expenses found</p>
         ) : (
           filteredExpenses.map((expense) => (
@@ -45,7 +45,17 @@ const Expenses = (props) => {
               key={expense.id}
             />
           ))
-        )}
+        )} */}
+        {filteredExpenses.length === 0 && <p>No expenses found</p>}
+        {filteredExpenses.length > 0 &&
+          filteredExpenses.map((expense) => (
+            <ExpenseItem
+              title={expense.title}
+              amount={expense.amount}
+              date={expense.date}
+              key={expense.id}
+            />
+          ))}
       </Card>
     </div>
   );
